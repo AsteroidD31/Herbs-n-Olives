@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Instagram — Photo grid section with follow CTA.
+   ========================================================================== */
+
+.instagram {
+  background-color: var(--color-cream);
+}
+
+.instagram__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+}
+
+/* ── Instagram Image ── */
+.instagram__item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.instagram__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.instagram__item:hover .instagram__image {
+  transform: scale(1.1);
+}
+
+/* Hover overlay */
+.instagram__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--color-dark-rgb), 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.instagram__item:hover .instagram__overlay {
+  opacity: 1;
+}
+
+.instagram__overlay-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-white);
+}
+
+/* ── Follow CTA ── */
+.instagram__cta {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+.instagram__handle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  color: var(--color-dark);
+  margin-bottom: var(--space-md);
+}
+
+.instagram__follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+  color: var(--color-white);
+  font-family: var(--font-button);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-sm) var(--space-2xl);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+}
+
+.instagram__follow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(131, 58, 180, 0.3);
+}
+
+.instagram__follow-btn svg {
+  width: 18px;
+  height: 18px;
+}

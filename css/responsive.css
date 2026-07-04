@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Responsive — Breakpoint overrides
+   Desktop 1440+, Laptop 1024, Tablet 768, Mobile 480
+   ========================================================================== */
+
+/* ── Laptop (max 1024px) ── */
+@media (max-width: 1024px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu__layout {
+    grid-template-columns: 180px 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .menu__dishes {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__grid {
+    columns: 2;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* ── Tablet (max 768px) ── */
+@media (max-width: 768px) {
+  /* Navbar → Hamburger */
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__mobile-overlay {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-container {
+    padding: var(--space-md);
+  }
+
+  .hero-card {
+    border-radius: var(--radius-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .hero__content {
+    max-width: 100%;
+    padding: 0 var(--space-md);
+  }
+
+
+
+  .hero__leaf--4,
+  .hero__leaf--5 {
+    display: none;
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about__image-wrapper {
+    aspect-ratio: 16 / 9;
+    max-height: 400px;
+  }
+
+  .about__content {
+    max-width: 100%;
+  }
+
+  /* Featured */
+  .featured__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Gallery */
+  .gallery__grid {
+    columns: 2;
+    column-gap: var(--space-md);
+  }
+
+  /* Menu */
+  .menu__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu__sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  .menu__category-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-xs);
+    padding-bottom: var(--space-sm);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .menu__category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu__category-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .menu__dishes {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reviews */
+  .reviews__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: var(--space-xl);
+  }
+
+  .reviews__card:nth-child(1),
+  .reviews__card:nth-child(2),
+  .reviews__card:nth-child(3) {
+    transform: rotate(0deg);
+  }
+
+  .reviews__dots {
+    display: flex;
+  }
+
+  /* Order */
+  .order__grid {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .order__card {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* Instagram */
+  .instagram__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+
+  .footer__brand {
+    grid-column: 1;
+  }
+
+  .footer__socials {
+    justify-content: center;
+  }
+
+  .footer__hours-item {
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .footer__contact-item {
+    justify-content: center;
+  }
+}
+
+/* ── Mobile (max 480px) ── */
+@media (max-width: 480px) {
+  :root {
+    --section-padding-x: 1.25rem;
+  }
+
+  /* Hero */
+  .hero-container {
+    padding: var(--space-xs);
+  }
+
+  .hero-card {
+    border-radius: var(--radius-lg);
+    padding: 0 var(--space-md);
+    padding-top: 110px;
+    padding-bottom: var(--space-lg);
+    justify-content: flex-start;
+  }
+
+  .hero__content {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+
+
+  .hero__leaf--1,
+  .hero__leaf--3 {
+    display: none;
+  }
+
+  .hero__steam {
+    display: none;
+  }
+
+  /* Gallery */
+  .gallery__grid {
+    columns: 1;
+  }
+
+  /* Instagram */
+  .instagram__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Scroll indicator hide */
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Menu dish cards stack */
+  .menu__dish-card {
+    flex-direction: column;
+  }
+
+  .menu__dish-image-wrapper {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+/* ── Large Desktop (min 1441px) ── */
+@media (min-width: 1441px) {
+  .hero__content {
+    max-width: 800px;
+  }
+
+  .featured__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery__grid {
+    columns: 4;
+  }
+}

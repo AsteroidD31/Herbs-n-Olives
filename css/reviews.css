@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Reviews — Pinned paper-style review cards.
+   ========================================================================== */
+
+.reviews {
+  background-color: var(--color-cream);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+  padding: var(--space-xl) 0;
+}
+
+/* ── Review Card ── */
+.reviews__card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl);
+  position: relative;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+  cursor: default;
+}
+
+/* Subtle rotation for paper feel */
+.reviews__card:nth-child(1) { --card-rotation: -2deg; transform: rotate(-2deg); }
+.reviews__card:nth-child(2) { --card-rotation: 1.5deg; transform: rotate(1.5deg); }
+.reviews__card:nth-child(3) { --card-rotation: -1deg; transform: rotate(-1deg); }
+
+/* Hover straightens the card */
+.reviews__card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Pin decoration ── */
+.reviews__pin {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--color-tomato);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reviews__pin::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+/* ── Avatar ── */
+.reviews__avatar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.reviews__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-pastel-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  color: var(--color-olive);
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+
+.reviews__author-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+}
+
+.reviews__author-location {
+  font-size: var(--fs-caption);
+  color: var(--color-dark);
+  opacity: 0.5;
+}
+
+/* ── Quote ── */
+.reviews__quote {
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  color: var(--color-dark);
+  opacity: 0.8;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.reviews__quote::before {
+  content: '"';
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-pastel-green);
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 4px;
+}
+
+/* ── Stars ── */
+.reviews__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviews__star {
+  width: 16px;
+  height: 16px;
+  color: var(--color-gold);
+}
+
+/* ── Carousel Dots (mobile) ── */
+.reviews__dots {
+  display: none;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xl);
+}
+
+.reviews__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.reviews__dot.is-active {
+  opacity: 1;
+  background: var(--color-olive);
+}

@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Menu — Sticky sidebar categories + dish cards grid.
+   ========================================================================== */
+
+.menu {
+  background-color: var(--color-ivory);
+}
+
+.menu__layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* ── Sidebar Categories ── */
+.menu__sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.menu__category-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.menu__category-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-dark);
+  opacity: 0.6;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.menu__category-btn:hover {
+  opacity: 1;
+  background: rgba(var(--color-olive-rgb), 0.08);
+}
+
+.menu__category-btn.is-active {
+  opacity: 1;
+  background: var(--color-olive);
+  color: var(--color-cream);
+  font-weight: var(--fw-semibold);
+}
+
+/* ── Dishes Grid ── */
+.menu__dishes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+/* ── Dish Card ── */
+.menu__dish-card {
+  display: flex;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+  cursor: pointer;
+}
+
+.menu__dish-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Dish Card Image */
+.menu__dish-image-wrapper {
+  flex-shrink: 0;
+  width: 120px;
+  overflow: hidden;
+}
+
+.menu__dish-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.menu__dish-card:hover .menu__dish-image {
+  transform: scale(1.1);
+}
+
+/* Dish Card Info */
+.menu__dish-info {
+  flex: 1;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu__dish-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+  margin-bottom: var(--space-2xs);
+}
+
+.menu__dish-desc {
+  font-size: var(--fs-caption);
+  color: var(--color-dark);
+  opacity: 0.6;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu__dish-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__dish-price {
+  font-family: var(--font-button);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-olive);
+}
+
+.menu__dish-wishlist {
+  width: 24px;
+  height: 24px;
+  color: var(--color-dark);
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.menu__dish-wishlist:hover {
+  opacity: 1;
+  color: var(--color-tomato);
+  transform: scale(1.2);
+}
+
+/* ── Category Title ── */
+.menu__category-title {
+  grid-column: 1 / -1;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-dark);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(var(--color-dark-rgb), 0.1);
+}

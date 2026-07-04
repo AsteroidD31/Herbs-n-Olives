@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laid-Back Italian Kitchen — Authentic Italian cuisine featuring wood-fired pizzas, handmade pasta, and fresh ingredients inspired by Michelin-winning traditions.">
+  <meta name="keywords" content="Italian restaurant, pizza, pasta, fine dining, authentic cuisine">
+  <meta name="author" content="Laid-Back Italian Kitchen">
+  <meta name="theme-color" content="#F8F4EC">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Laid-Back Italian Kitchen — Authentic Italian Cuisine">
+  <meta property="og:description" content="Wood-fired pizzas, handmade pasta, and fresh ingredients inspired by Michelin-winning traditions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-bg.png">
+
+  <title>Laid-Back Italian Kitchen — Authentic Italian Cuisine</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (modular) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/featured.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/reviews.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/instagram.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__logo">Laid-Back<br>Italian Kitchen</div>
+    <div class="loader__bar-track">
+      <div class="loader__bar-fill" id="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ========== HERO CONTAINER (Floating Card Layout) ========== -->
+  <div class="hero-container">
+    <section class="hero-card" id="hero" aria-label="Hero">
+      
+      <!-- ========== NAVIGATION INSIDE HERO CARD ========== -->
+      <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__inner">
+          <a href="#hero" class="navbar__logo" aria-label="Laid-Back Italian Kitchen — Home">
+            Laid-Back<br>Italian Kitchen
+          </a>
+
+          <ul class="navbar__menu" id="navbar-menu">
+            <li><a href="#hero" class="navbar__link is-active" data-section="hero">Home</a></li>
+            <li><a href="#about" class="navbar__link" data-section="about">About</a></li>
+            <li><a href="#gallery" class="navbar__link" data-section="gallery">Gallery</a></li>
+            <li><a href="#menu" class="navbar__link" data-section="menu">Menu</a></li>
+            <li><a href="#reviews" class="navbar__link" data-section="reviews">Reviews</a></li>
+            <li><a href="#order" class="navbar__link" data-section="order">Order Online</a></li>
+            <li>
+              <a href="#instagram" class="navbar__instagram" aria-label="Follow us on Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Hamburger -->
+          <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+          </button>
+        </div>
+
+        <!-- Mobile Overlay -->
+        <div class="navbar__mobile-overlay" id="mobile-overlay" aria-hidden="true">
+          <a href="#hero" class="navbar__mobile-link" data-section="hero">Home</a>
+          <a href="#about" class="navbar__mobile-link" data-section="about">About</a>
+          <a href="#gallery" class="navbar__mobile-link" data-section="gallery">Gallery</a>
+          <a href="#menu" class="navbar__mobile-link" data-section="menu">Menu</a>
+          <a href="#reviews" class="navbar__mobile-link" data-section="reviews">Reviews</a>
+          <a href="#order" class="navbar__mobile-link" data-section="order">Order Online</a>
+          <a href="#instagram" class="navbar__mobile-link" data-section="instagram">Instagram</a>
+        </div>
+      </nav>
+
+      <!-- Background Image -->
+      <div class="hero__image-wrapper">
+        <img
+          src="assets/images/hero-bg.png"
+          alt="Wood-fired pizza and fresh pasta in a sunlit Italian kitchen"
+          class="hero__image"
+          fetchpriority="high"
+        >
+      </div>
+
+
+
+      <!-- Grain overlay -->
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <!-- Gradient overlay -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Decorative Olive Branches -->
+      <div class="hero__decor-branch hero__decor-branch--top-right" aria-hidden="true">
+        <img src="assets/images/olive-branch-top-right.png" alt="Olive branch top right decoration">
+      </div>
+      <div class="hero__decor-branch hero__decor-branch--bottom-left" aria-hidden="true">
+        <img src="assets/images/olive-branch-bottom-left.png" alt="Olive branch bottom left decoration">
+      </div>
+
+      <!-- Floating SVG Basil Leaves (No checkers) -->
+      <div class="hero__leaf hero__leaf--1" aria-hidden="true">
+        <svg class="basil-leaf-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="leaf-shadow-1" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#leaf-shadow-1)">
+            <path d="M50 10 C 25 35, 20 65, 45 85 C 50 90, 52 88, 55 83 C 75 60, 70 30, 50 10 Z" fill="#60764b"/>
+            <path d="M50 10 C 37 25, 33 45, 45 70 C 47 74, 49 73, 50 70 Z" fill="#77905f"/>
+            <path d="M50 10 C 50 35, 48 60, 47 80" stroke="#9bb782" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M47 30 C 40 33, 35 32, 31 29" stroke="#9bb782" stroke-width="1" stroke-linecap="round" fill="none"/>
+            <path d="M48 45 C 41 49, 34 48, 29 44" stroke="#9bb782" stroke-width="1" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero__leaf hero__leaf--2" aria-hidden="true">
+        <svg class="basil-leaf-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(45deg);">
+          <defs>
+            <filter id="leaf-shadow-2" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#leaf-shadow-2)">
+            <path d="M50 10 C 25 35, 20 65, 45 85 C 50 90, 52 88, 55 83 C 75 60, 70 30, 50 10 Z" fill="#586d44"/>
+            <path d="M50 10 C 37 25, 33 45, 45 70 C 47 74, 49 73, 50 70 Z" fill="#6c8554"/>
+            <path d="M50 10 C 50 35, 48 60, 47 80" stroke="#8da873" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M47 30 C 40 33, 35 32, 31 29" stroke="#8da873" stroke-width="1" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero__leaf hero__leaf--3" aria-hidden="true">
+        <svg class="basil-leaf-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-30deg) scaleX(-1);">
+          <defs>
+            <filter id="leaf-shadow-3" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#leaf-shadow-3)">
+            <path d="M50 10 C 25 35, 20 65, 45 85 C 50 90, 52 88, 55 83 C 75 60, 70 30, 50 10 Z" fill="#6b8256"/>
+            <path d="M50 10 C 37 25, 33 45, 45 70 C 47 74, 49 73, 50 70 Z" fill="#809c68"/>
+            <path d="M50 10 C 50 35, 48 60, 47 80" stroke="#a4bf8c" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero__leaf hero__leaf--4" aria-hidden="true">
+        <svg class="basil-leaf-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(120deg);">
+          <defs>
+            <filter id="leaf-shadow-4" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#leaf-shadow-4)">
+            <path d="M50 10 C 25 35, 20 65, 45 85 C 50 90, 52 88, 55 83 C 75 60, 70 30, 50 10 Z" fill="#60764b"/>
+            <path d="M50 10 C 37 25, 33 45, 45 70 C 47 74, 49 73, 50 70 Z" fill="#77905f"/>
+            <path d="M50 10 C 50 35, 48 60, 47 80" stroke="#9bb782" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero__leaf hero__leaf--5" aria-hidden="true">
+        <svg class="basil-leaf-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-60deg);">
+          <defs>
+            <filter id="leaf-shadow-5" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g filter="url(#leaf-shadow-5)">
+            <path d="M50 10 C 25 35, 20 65, 45 85 C 50 90, 52 88, 55 83 C 75 60, 70 30, 50 10 Z" fill="#586d44"/>
+            <path d="M50 10 C 37 25, 33 45, 45 70 C 47 74, 49 73, 50 70 Z" fill="#6c8554"/>
+            <path d="M50 10 C 50 35, 48 60, 47 80" stroke="#8da873" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Steam Effect (Originates from Pizza on the right) -->
+      <div class="hero__steam" aria-hidden="true">
+        <div class="hero__steam-particle"></div>
+        <div class="hero__steam-particle"></div>
+        <div class="hero__steam-particle"></div>
+        <div class="hero__steam-particle"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="hero__content">
+        <h1 class="hero__title" id="hero-title">Authentic Italian Cuisine</h1>
+        <p class="hero__subtitle">
+          Wood-fired pizzas, handmade pasta, and fresh ingredients,<br>
+          are inspired by Michelin-winning websites.
+        </p>
+        <div class="hero__buttons">
+          <a href="#menu" class="btn btn--primary">View Menu</a>
+          <a href="#" class="btn btn--outline">Reserve Table</a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-indicator__mouse">
+          <div class="scroll-indicator__dot"></div>
+        </div>
+        <span class="scroll-indicator__text">Scroll</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about" aria-label="About Us">
+    <div class="container">
+      <div class="about__grid">
+        <!-- Image -->
+        <div class="about__image-wrapper">
+          <img
+            src="assets/images/about.png"
+            alt="Chef handmaking fresh pasta in our rustic kitchen"
+            class="about__image"
+            loading="lazy"
+          >
+          <!-- Decorative SVG olive branch -->
+          <svg class="about__decor" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <path d="M60 10C40 30 20 50 30 80C40 100 70 110 90 90C100 70 80 40 60 10Z" fill="#B8C7A3" opacity="0.3"/>
+            <path d="M55 20C45 35 35 55 42 72C48 85 65 90 78 78C86 65 75 45 55 20Z" fill="#58664B" opacity="0.2"/>
+          </svg>
+        </div>
+
+        <!-- Content -->
+        <div class="about__content">
+          <span class="about__label">About Us</span>
+          <h2 class="about__title" id="about-title">Where Tradition Meets Passion</h2>
+          <p class="about__text">
+            Wandered through paragraphs where thread of classics and
+            bold innovations articulately criss-crossed, we experimented fiercely and
+            embraced a vibrant brew of contemporaries and old-fashioned curiosity, resulting in
+            pamphlets bookstacks percolation sweetness, and welcome a captive
+            traditional atmosphere grace and made fragments and
+            vibrating equilibrium.
+          </p>
+          <p class="about__text">
+            We craft dishes that celebrate the richness of Italian cuisine from
+            timeless recipes handed down through generations to innovative creations
+            that surprise and delight. Every ingredient is selected with care, every
+            dish prepared with love.
+          </p>
+          <span class="about__signature">— Chef Marco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED DISHES ========== -->
+  <section class="featured section" id="featured" aria-label="Featured Dishes">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Featured Dishes</h2>
+        <hr class="section__divider" aria-hidden="true">
+      </div>
+
+      <div class="featured__grid">
+        <!-- Card 1 -->
+        <article class="featured__card">
+          <div class="featured__card-image-wrapper">
+            <img src="assets/images/dish-margherita.png" alt="Pizza Margherita Napoletana" class="featured__card-image" loading="lazy">
+            <span class="featured__card-tag">Chef's Pick</span>
+          </div>
+          <div class="featured__card-body">
+            <h3 class="featured__card-name">Pizza Margherita</h3>
+            <p class="featured__card-desc">San Marzano tomatoes, fresh mozzarella, basil, extra virgin olive oil on a wood-fired crust.</p>
+            <span class="featured__card-price">$18.50</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="featured__card">
+          <div class="featured__card-image-wrapper">
+            <img src="assets/images/dish-pasta.png" alt="Pappardelle Bolognese" class="featured__card-image" loading="lazy">
+          </div>
+          <div class="featured__card-body">
+            <h3 class="featured__card-name">Pappardelle Bolognese</h3>
+            <p class="featured__card-desc">Fresh egg pappardelle with slow-cooked ragù, parmigiano reggiano, and fresh herbs.</p>
+            <span class="featured__card-price">$22.00</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="featured__card">
+          <div class="featured__card-image-wrapper">
+            <img src="assets/images/dish-risotto.png" alt="Truffle Mushroom Risotto" class="featured__card-image" loading="lazy">
+            <span class="featured__card-tag">Popular</span>
+          </div>
+          <div class="featured__card-body">
+            <h3 class="featured__card-name">Truffle Risotto</h3>
+            <p class="featured__card-desc">Carnaroli rice, wild mushrooms, black truffle, aged parmigiano, and fresh parsley.</p>
+            <span class="featured__card-price">$28.00</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="featured__card">
+          <div class="featured__card-image-wrapper">
+            <img src="assets/images/dish-tiramisu.png" alt="Classic Tiramisu" class="featured__card-image" loading="lazy">
+          </div>
+          <div class="featured__card-body">
+            <h3 class="featured__card-name">Classic Tiramisu</h3>
+            <p class="featured__card-desc">Mascarpone cream, espresso-soaked ladyfingers, cocoa powder, and a touch of Marsala.</p>
+            <span class="featured__card-price">$14.00</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery section" id="gallery" aria-label="Gallery">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Gallery</h2>
+        <hr class="section__divider" aria-hidden="true">
+      </div>
+
+      <div class="gallery__grid">
+        <div class="gallery__item">
+          <img src="assets/images/gallery-1.png" alt="Our cozy restaurant interior" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="assets/images/dish-margherita.png" alt="Fresh margherita pizza" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="assets/images/gallery-2.png" alt="Wine and cheese pairing" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="assets/images/dish-bruschetta.png" alt="Authentic bruschetta" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="assets/images/dish-salad.png" alt="Fresh caprese salad" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <img src="assets/images/about.png" alt="Chef preparing fresh pasta" class="gallery__item-image" loading="lazy">
+          <div class="gallery__item-overlay">
+            <svg class="gallery__item-overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section class="menu section" id="menu" aria-label="Interactive Menu">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Menu</h2>
+        <p class="section__subtitle">Choose with style, savor with soul — every bite tells a story.</p>
+      </div>
+
+      <div class="menu__layout">
+        <!-- Sidebar Categories -->
+        <aside class="menu__sidebar" aria-label="Menu categories">
+          <div class="menu__category-list" role="tablist">
+            <button class="menu__category-btn is-active" data-category="zuppe" role="tab" aria-selected="true">Zuppe Soup</button>
+            <button class="menu__category-btn" data-category="insalata" role="tab" aria-selected="false">Insalata</button>
+            <button class="menu__category-btn" data-category="antipasti" role="tab" aria-selected="false">Antipasti</button>
+            <button class="menu__category-btn" data-category="breads" role="tab" aria-selected="false">Between The Breads</button>
+            <button class="menu__category-btn" data-category="pizza" role="tab" aria-selected="false">Pizza Napolitano</button>
+            <button class="menu__category-btn" data-category="pasta" role="tab" aria-selected="false">Pasta & Risotto</button>
+            <button class="menu__category-btn" data-category="entree" role="tab" aria-selected="false">Entree</button>
+            <button class="menu__category-btn" data-category="dolce" role="tab" aria-selected="false">Dolce</button>
+          </div>
+        </aside>
+
+        <!-- Dishes Grid -->
+        <div class="menu__dishes" id="menu-dishes" role="tabpanel">
+          <!-- Zuppe Soup -->
+          <article class="menu__dish-card" data-category="zuppe">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-soup.png" alt="Minestrone Soup" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Minestrone Classico</h3>
+              <p class="menu__dish-desc">Hearty vegetable soup with beans, pasta, and fresh herbs</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$12.50</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pizza Napolitano -->
+          <article class="menu__dish-card" data-category="pizza">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-margherita.png" alt="Pizza Napolitano" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Pizza Napolitano</h3>
+              <p class="menu__dish-desc">San Marzano, mozzarella, basil, olive oil, wood-fired</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$18.50</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pasta & Risotto -->
+          <article class="menu__dish-card" data-category="pasta">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-risotto.png" alt="Truffle Risotto" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Pasta & Risotto</h3>
+              <p class="menu__dish-desc">Carnaroli rice, mushrooms, truffle, parmigiano, parsley</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$28.00</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Insalata -->
+          <article class="menu__dish-card" data-category="insalata">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-salad.png" alt="Caprese Salad" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Caprese Insalata</h3>
+              <p class="menu__dish-desc">Fresh mozzarella, vine tomatoes, basil, balsamic reduction</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$14.00</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Antipasti -->
+          <article class="menu__dish-card" data-category="antipasti">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-bruschetta.png" alt="Bruschetta al Pomodoro" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Bruschetta al Pomodoro</h3>
+              <p class="menu__dish-desc">Toasted ciabatta, diced tomatoes, garlic, fresh basil, olive oil</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$11.50</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Between The Breads -->
+          <article class="menu__dish-card" data-category="breads">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-panini.png" alt="Panini Italiano" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Panini Italiano</h3>
+              <p class="menu__dish-desc">Prosciutto, mozzarella, tomato, pesto, pressed ciabatta</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$16.00</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entree -->
+          <article class="menu__dish-card" data-category="entree">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-entree.png" alt="Ossobuco alla Milanese" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Ossobuco alla Milanese</h3>
+              <p class="menu__dish-desc">Braised veal shank, gremolata, saffron risotto</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$34.00</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dolce -->
+          <article class="menu__dish-card" data-category="dolce">
+            <div class="menu__dish-image-wrapper">
+              <img src="assets/images/dish-tiramisu.png" alt="Classic Tiramisu" class="menu__dish-image" loading="lazy">
+            </div>
+            <div class="menu__dish-info">
+              <h3 class="menu__dish-name">Tiramisu Classico</h3>
+              <p class="menu__dish-desc">Mascarpone, espresso, ladyfingers, cocoa, Marsala wine</p>
+              <div class="menu__dish-footer">
+                <span class="menu__dish-price">$14.00</span>
+                <svg class="menu__dish-wishlist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-label="Add to wishlist"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section class="reviews section" id="reviews" aria-label="Customer Reviews">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Reviews</h2>
+        <hr class="section__divider" aria-hidden="true">
+      </div>
+
+      <div class="reviews__grid">
+        <!-- Review 1 -->
+        <article class="reviews__card">
+          <div class="reviews__pin" aria-hidden="true"></div>
+          <div class="reviews__avatar-row">
+            <div class="reviews__avatar">A</div>
+            <div>
+              <div class="reviews__author-name">Adele Vittore</div>
+              <div class="reviews__author-location">Local Guide</div>
+            </div>
+          </div>
+          <p class="reviews__quote">
+            I have found some almost perfect
+            pizzerias in cities like Napoli, and nothing
+            outside Italy measures up to it.
+            Until this place showed up in our
+            neighborhood. Absolutely magical.
+          </p>
+          <div class="reviews__stars" aria-label="5 out of 5 stars">
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="reviews__card">
+          <div class="reviews__pin" aria-hidden="true"></div>
+          <div class="reviews__avatar-row">
+            <div class="reviews__avatar">K</div>
+            <div>
+              <div class="reviews__author-name">Krishane K Kitchen</div>
+              <div class="reviews__author-location">Food Blogger</div>
+            </div>
+          </div>
+          <p class="reviews__quote">
+            There are the absolutely exquisite
+            gnocchi with rosemary creamy sauce, the
+            truffle pasta elevates any ordinary meal and one
+            must admire their skill to pair one
+            simple cheese to reveal our best
+            memories.
+          </p>
+          <div class="reviews__stars" aria-label="5 out of 5 stars">
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="reviews__card">
+          <div class="reviews__pin" aria-hidden="true"></div>
+          <div class="reviews__avatar-row">
+            <div class="reviews__avatar">C</div>
+            <div>
+              <div class="reviews__author-name">Crescente Bartoloni</div>
+              <div class="reviews__author-location">Wine Enthusiast</div>
+            </div>
+          </div>
+          <p class="reviews__quote">
+            This is my favorite Italian restaurant of all the world's
+            hidden spots, a place where you can distinctly feel the warmth
+            of authentic hospitality and savour the essence of old world
+            elegance.
+          </p>
+          <div class="reviews__stars" aria-label="5 out of 5 stars">
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="reviews__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </article>
+      </div>
+
+      <!-- Carousel Dots (mobile) -->
+      <div class="reviews__dots" aria-label="Review navigation">
+        <button class="reviews__dot is-active" aria-label="Review 1"></button>
+        <button class="reviews__dot" aria-label="Review 2"></button>
+        <button class="reviews__dot" aria-label="Review 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORDER ONLINE ========== -->
+  <section class="order section" id="order" aria-label="Order Online">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Order Online</h2>
+        <hr class="section__divider" aria-hidden="true">
+      </div>
+
+      <div class="order__grid">
+        <!-- Swiggy -->
+        <a href="#" class="order__card order__card--swiggy" aria-label="Order on Swiggy" target="_blank" rel="noopener">
+          <svg class="order__card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#FC8019"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">S</text></svg>
+          Swiggy
+        </a>
+
+        <!-- Zomato -->
+        <a href="#" class="order__card order__card--zomato" aria-label="Order on Zomato" target="_blank" rel="noopener">
+          <svg class="order__card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#E23744"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Z</text></svg>
+          zomato
+        </a>
+
+        <!-- District.in -->
+        <a href="#" class="order__card order__card--district" aria-label="Order on District.in" target="_blank" rel="noopener">
+          District.in
+        </a>
+
+        <!-- EasyDiner -->
+        <a href="#" class="order__card order__card--easydiner" aria-label="Order on EasyDiner" target="_blank" rel="noopener">
+          <svg class="order__card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#58664B"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">E</text></svg>
+          EasyDiner
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INSTAGRAM ========== -->
+  <section class="instagram section" id="instagram" aria-label="Instagram Feed">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Instagram</h2>
+        <hr class="section__divider" aria-hidden="true">
+      </div>
+
+      <div class="instagram__grid">
+        <div class="instagram__item">
+          <img src="assets/images/dish-margherita.png" alt="Instagram post - Pizza" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="assets/images/dish-pasta.png" alt="Instagram post - Pasta" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="assets/images/gallery-1.png" alt="Instagram post - Interior" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="assets/images/dish-risotto.png" alt="Instagram post - Risotto" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="assets/images/dish-bruschetta.png" alt="Instagram post - Bruschetta" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="assets/images/gallery-2.png" alt="Instagram post - Wine" class="instagram__image" loading="lazy">
+          <div class="instagram__overlay">
+            <svg class="instagram__overlay-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="instagram__cta">
+        <p class="instagram__handle">@laidbackitaliankitchen</p>
+        <button class="instagram__follow-btn" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          Follow Us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <div class="footer__logo">Laid-Back<br>Italian Kitchen</div>
+          <p class="footer__tagline">Authentic Italian cuisine crafted with passion and tradition since 2018.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h3 class="footer__column-title">Navigate</h3>
+          <div class="footer__links">
+            <a href="#hero" class="footer__link">Home</a>
+            <a href="#about" class="footer__link">About</a>
+            <a href="#menu" class="footer__link">Menu</a>
+            <a href="#gallery" class="footer__link">Gallery</a>
+            <a href="#reviews" class="footer__link">Reviews</a>
+          </div>
+        </div>
+
+        <!-- Opening Hours -->
+        <div>
+          <h3 class="footer__column-title">Hours</h3>
+          <div class="footer__hours-item">
+            <span>Mon – Fri</span>
+            <span>11am – 10pm</span>
+          </div>
+          <div class="footer__hours-item">
+            <span>Saturday</span>
+            <span>10am – 11pm</span>
+          </div>
+          <div class="footer__hours-item">
+            <span>Sunday</span>
+            <span>10am – 9pm</span>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="footer__column-title">Contact</h3>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>123 Via Roma, Little Italy<br>New York, NY 10013</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(212) 555-0194</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>hello@laidbackitaliankitchen.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">Copyright &copy; 2024 Laid-Back Italian Kitchen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- GSAP (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll (CDN) -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- SplitType (CDN) -->
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+  <!-- Application Scripts (modular) -->
+  <script src="js/scroll.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

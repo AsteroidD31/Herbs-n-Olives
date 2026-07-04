@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Navbar — Navigation Bar
+   Transparent → glassmorphism on scroll, sticky, responsive hamburger.
+   ========================================================================== */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-navbar);
+  padding: var(--space-lg) 0;
+  transition: background var(--transition-slow),
+              padding var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+/* ── Scrolled glassmorphism state ── */
+.navbar.is-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(var(--color-cream-rgb), 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-sm) 0;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+  line-height: var(--lh-tight);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
+}
+
+/* ── Navigation Links ── */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navbar__link {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-dark);
+  position: relative;
+  padding: var(--space-2xs) 0;
+  transition: color var(--transition-fast);
+}
+
+/* Underline animation */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-olive);
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover::after,
+.navbar__link.is-active::after {
+  width: 100%;
+}
+
+.navbar__link.is-active {
+  color: var(--color-olive);
+}
+
+/* ── Instagram Pill Button ── */
+.navbar__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-pastel-green);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.navbar__instagram:hover {
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar__instagram svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Reserve CTA ── */
+.navbar__cta {
+  font-family: var(--font-button);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-olive);
+  border: 1.5px solid var(--color-olive);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.navbar__cta:hover {
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+/* ── Mobile Hamburger ── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-xs);
+  cursor: pointer;
+  z-index: calc(var(--z-navbar) + 10);
+}
+
+.navbar__hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.navbar__hamburger.is-active .navbar__hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.is-active .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar__hamburger.is-active .navbar__hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Menu Overlay ── */
+.navbar__mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(var(--color-cream-rgb), 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: calc(var(--z-navbar) - 1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-slow),
+              visibility var(--transition-slow);
+}
+
+.navbar__mobile-overlay.is-open {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-dark);
+  transition: color var(--transition-fast);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-olive);
+}

@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Gallery — Masonry / Pinterest-style image grid.
+   ========================================================================== */
+
+.gallery {
+  background-color: var(--color-cream);
+}
+
+.gallery__grid {
+  columns: 3;
+  column-gap: var(--space-lg);
+}
+
+/* ── Gallery Item ── */
+.gallery__item {
+  break-inside: avoid;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.gallery__item:hover {
+  transform: scale(1.02);
+}
+
+.gallery__item-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery__item:hover .gallery__item-image {
+  transform: scale(1.08);
+}
+
+/* ── Hover Overlay ── */
+.gallery__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--color-dark-rgb), 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover .gallery__item-overlay {
+  opacity: 1;
+}
+
+.gallery__item-overlay-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-white);
+  opacity: 0.9;
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Order — Delivery partner cards / buttons.
+   ========================================================================== */
+
+.order {
+  background-color: var(--color-ivory);
+}
+
+.order__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+/* ── Partner Card ── */
+.order__card {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(var(--color-dark-rgb), 0.1);
+  background: var(--color-white);
+  font-family: var(--font-button);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.order__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  border-radius: inherit;
+}
+
+.order__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+/* Brand-specific hover colors */
+.order__card--swiggy:hover {
+  background: #FC8019;
+  color: var(--color-white);
+  border-color: #FC8019;
+}
+
+.order__card--zomato {
+  background: #E23744;
+  color: var(--color-white);
+  border-color: #E23744;
+}
+
+.order__card--zomato:hover {
+  background: #cb2f3a;
+  border-color: #cb2f3a;
+}
+
+.order__card--district:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+}
+
+.order__card--easydiner:hover {
+  background: var(--color-olive);
+  color: var(--color-white);
+  border-color: var(--color-olive);
+}
+
+/* Partner icon */
+.order__card-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.order__card:hover .order__card-icon {
+  transform: scale(1.15) rotate(-5deg);
+}

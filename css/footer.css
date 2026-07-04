@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Footer — Minimal footer with logo, links, socials.
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-ivory);
+  padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── Logo / Brand ── */
+.footer__brand {
+  grid-column: 1;
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-md);
+}
+
+.footer__tagline {
+  font-size: var(--fs-small);
+  color: var(--color-dark);
+  opacity: 0.6;
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Column Titles ── */
+.footer__column-title {
+  font-family: var(--font-button);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Links ── */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer__link {
+  font-size: var(--fs-small);
+  color: var(--color-dark);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast),
+              color var(--transition-fast);
+}
+
+.footer__link:hover {
+  opacity: 1;
+  color: var(--color-olive);
+}
+
+/* ── Hours ── */
+.footer__hours-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-small);
+  color: var(--color-dark);
+  opacity: 0.7;
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Contact ── */
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--fs-small);
+  color: var(--color-dark);
+  opacity: 0.7;
+  margin-bottom: var(--space-sm);
+  line-height: var(--lh-normal);
+}
+
+.footer__contact-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.6;
+}
+
+/* ── Social Icons ── */
+.footer__socials {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.footer__social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(var(--color-dark-rgb), 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.footer__social-link:hover {
+  background: var(--color-olive);
+  transform: translateY(-2px);
+}
+
+.footer__social-link:hover svg {
+  color: var(--color-cream);
+}
+
+.footer__social-link svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-dark);
+  transition: color var(--transition-fast);
+}
+
+/* ── Bottom Bar ── */
+.footer__bottom {
+  border-top: 1px solid rgba(var(--color-dark-rgb), 0.08);
+  padding-top: var(--space-xl);
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: var(--fs-caption);
+  color: var(--color-dark);
+  opacity: 0.4;
+}

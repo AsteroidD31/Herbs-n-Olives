@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Featured Dishes — Card grid with hover effects.
+   ========================================================================== */
+
+.featured {
+  background-color: var(--color-ivory);
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+/* ── Card ── */
+.featured__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+  cursor: pointer;
+}
+
+.featured__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Card Image ── */
+.featured__card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.featured__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.featured__card:hover .featured__card-image {
+  transform: scale(1.08);
+}
+
+/* ── Card Body ── */
+.featured__card-body {
+  padding: var(--space-lg);
+}
+
+.featured__card-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  margin-bottom: var(--space-xs);
+  color: var(--color-dark);
+}
+
+.featured__card-desc {
+  font-size: var(--fs-small);
+  color: var(--color-dark);
+  opacity: 0.65;
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-md);
+}
+
+.featured__card-price {
+  font-family: var(--font-button);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-olive);
+}
+
+/* ── Tag ── */
+.featured__card-tag {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  background: var(--color-olive);
+  color: var(--color-cream);
+  font-family: var(--font-button);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
